@@ -13,13 +13,14 @@ function App() {
   //Functional component
 
   function ProductCard(props) {
+    const { name, description, price, amount } = props;
     return (
       <div className="product-card">
-        <h1>{props.name || "No name"}</h1>
-        <p>{props.description || "No description available"}</p>
-        <p className="price">{props.price || "unknown price"}</p>
-        <p className={props.amount > 0 ? "available" : "not-available"}>
-          {props.amount > 0 ? "Available" : "Not available"}
+        <h1>{name || "No name"}</h1>
+        <p>{description || "No description available"}</p>
+        <p className="price">{price || "unknown price"}</p>
+        <p className={amount > 0 ? "available" : "not-available"}>
+          {amount > 0 ? "Available" : "Not available"}
         </p>
       </div>
     );
